@@ -1,0 +1,16 @@
+﻿services:
+  db:
+    container_name: fv-db
+    image: mariadb:10.6
+    ports:
+      - "3309:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+volumes:
+  db_data:
